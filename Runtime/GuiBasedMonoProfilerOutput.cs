@@ -11,6 +11,9 @@ namespace Depra.Unity.Benchmark.Runtime
 
         private Rect _area;
         private GUIStyle _style;
+        
+        private string _identifier;
+        private long _averageSampleDuration;
 
         public override void Init(int order)
         {
@@ -24,10 +27,20 @@ namespace Depra.Unity.Benchmark.Runtime
             };
         }
 
-        public override void UpdateInfo(string identifier, long averageSampleDuration)
+        public override void UpdateInfo(string identifier, long averageSampleDuration) 
         {
+            _identifier = identifier;
+            _averageSampleDuration = averageSampleDuration;
+            
             GUI.color = _color;
             var formattedText = FormatInfo(identifier, averageSampleDuration);
+            GUI.Label(_area, formattedText, _style);
+        }
+
+        private void OnGUI() 
+        {
+            GUI.color = _color;
+            var formattedText = FormatInfo(_identifier, _averageSampleDuration);
             GUI.Label(_area, formattedText, _style);
         }
     }
