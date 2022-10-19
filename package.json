@@ -1,0 +1,15 @@
+{
+  "name": "com.depra.unity.benchmark",
+  "displayName": "Depra.Unity.Benchmark",
+  "version": "0.1.0",
+  "unity": "2019.4",
+  "hideInEditor": false,
+  "keywords": [
+    "Random",
+    "Runtime"
+  ],
+  "license": "Apache-2.0",
+  "description": "Runtime performance measurement tool",
+  "type": "module",
+  "unityRelease": "30f1"
+}
