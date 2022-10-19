@@ -31,10 +31,6 @@ namespace Depra.Unity.Benchmark.Runtime
         {
             _identifier = identifier;
             _averageSampleDuration = averageSampleDuration;
-            
-            GUI.color = _color;
-            var formattedText = FormatInfo(identifier, averageSampleDuration);
-            GUI.Label(_area, formattedText, _style);
         }
 
         private void OnGUI() 
